@@ -1,13 +1,21 @@
 package bowling
 
 import org.assertj.core.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class BowlingGameTest {
 
+    lateinit var game: Game
+
+    @BeforeEach
+    fun setUp() {
+        game = Game()
+    }
+
     @Test
     fun `gutter game`() {
-        val game = Game()
+
         repeat(20) {
             game.roll(0)
         }
