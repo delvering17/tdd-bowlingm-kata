@@ -21,7 +21,7 @@ class Game {
                 score += 10 + spareBonus(frameIndex)
                 frameIndex += 2
             } else {
-                score += rolls[frameIndex] + rolls[frameIndex + 1]
+                score += sumOfPinsInFrame(frameIndex)
                 frameIndex += 2
             }
         }
@@ -36,5 +36,7 @@ class Game {
     private fun isStrike(frameIndex: Int) = rolls[frameIndex] == 10
 
     private fun isSpare(frameIndex: Int) = rolls[frameIndex] + rolls[frameIndex + 1] == 10
+
+    private fun sumOfPinsInFrame(frameIndex: Int): Int = rolls[frameIndex] + rolls[frameIndex + 1]
 
 }
