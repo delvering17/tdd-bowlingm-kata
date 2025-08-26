@@ -14,7 +14,7 @@ class Game {
         var frameIndex = 0
 
         for (frame in 0 until 10) {
-            if (rolls[frameIndex] + rolls[frameIndex + 1] == 10) {
+            if (isSpare(frameIndex)) {
                 score += 10 + rolls[frameIndex + 2]
                 frameIndex += 2
             } else {
@@ -25,5 +25,7 @@ class Game {
 
         return score
     }
+
+    private fun isSpare(frameIndex: Int): Boolean = rolls[frameIndex] + rolls[frameIndex + 1] == 10
 
 }
