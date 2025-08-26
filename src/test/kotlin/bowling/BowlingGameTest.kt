@@ -37,6 +37,15 @@ class BowlingGameTest {
         assertThat(game.score()).isEqualTo(10 + 3 + 3)
     }
 
+    @Test
+    fun `one strike`() {
+        game.roll(10)
+        game.roll(3)
+        game.roll(4)
+        rollMany(16, 0)
+        assertThat(game.score()).isEqualTo(10 + 3 + 4 + 3 + 4)
+    }
+
     private fun rollSpare() {
         game.roll(5)
         game.roll(5)
