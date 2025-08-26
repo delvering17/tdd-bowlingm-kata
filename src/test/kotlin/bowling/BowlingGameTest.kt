@@ -31,11 +31,15 @@ class BowlingGameTest {
 
     @Test
     fun `one spare`() {
-        game.roll(5)
-        game.roll(5) // spare
+        rollSpare()
         game.roll(3)
         rollMany(17, 0)
         assertThat(game.score()).isEqualTo(10 + 3 + 3)
+    }
+
+    private fun rollSpare() {
+        game.roll(5)
+        game.roll(5)
     }
 
     private fun rollMany(n: Int, pins: Int) {
