@@ -1,12 +1,15 @@
 package bowling
 
 class Game {
-    fun roll(i: Int) {
 
+    var score = 0
+
+    fun roll(pins: Int) {
+        score += pins
     }
 
     fun score(): Int {
-        return 0
+        return score
     }
 
 }

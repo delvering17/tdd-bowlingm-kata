@@ -1,9 +1,8 @@
 package bowling
 
-import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-// gutter game: 0
 class BowlingGameTest {
 
     @Test
@@ -14,6 +13,17 @@ class BowlingGameTest {
         }
 
         assertThat(game.score()).isEqualTo(0)
+    }
+
+    @Test
+    fun `all ones`() {
+        val game = Game()
+        repeat(20) {
+            game.roll(1)
+        }
+
+        assertThat(game.score()).isEqualTo(20)
+
     }
 
 }
