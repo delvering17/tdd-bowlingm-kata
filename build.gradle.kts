@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
+    testImplementation("org.assertj:assertj-core:3.27.4")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
