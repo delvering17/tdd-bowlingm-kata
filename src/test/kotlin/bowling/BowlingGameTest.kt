@@ -1,5 +1,6 @@
 package bowling
 
+import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -26,6 +27,15 @@ class BowlingGameTest {
 
         assertThat(game.score()).isEqualTo(20)
 
+    }
+
+    @Test
+    fun `one spare`() {
+        game.roll(5)
+        game.roll(5) // spare
+        game.roll(3)
+        rollMany(17, 0)
+        assertThat(game.score()).isEqualTo(10 + 3 + 3)
     }
 
     private fun rollMany(n: Int, pins: Int) {
