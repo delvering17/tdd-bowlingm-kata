@@ -15,23 +15,23 @@ class BowlingGameTest {
 
     @Test
     fun `gutter game`() {
-
-        repeat(20) {
-            game.roll(0)
-        }
+        rollMany(20, 0)
 
         assertThat(game.score()).isEqualTo(0)
     }
 
     @Test
     fun `all ones`() {
-        val game = Game()
-        repeat(20) {
-            game.roll(1)
-        }
+        rollMany(20, 1)
 
         assertThat(game.score()).isEqualTo(20)
 
+    }
+
+    private fun rollMany(n: Int, pins: Int) {
+        repeat(n) {
+            game.roll(pins)
+        }
     }
 
 }
