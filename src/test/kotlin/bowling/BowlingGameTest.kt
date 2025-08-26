@@ -46,6 +46,12 @@ class BowlingGameTest {
         assertThat(game.score()).isEqualTo(10 + 3 + 4 + 3 + 4)
     }
 
+    @Test
+    fun `perfect game`() {
+        rollMany(12, 10)
+        assertThat(game.score()).isEqualTo(300)
+    }
+
     private fun rollStrike() {
         game.roll(10)
     }
